@@ -205,11 +205,11 @@ def interface_get_ports(in_ports):
 
 def check_ip_addresses():
     if input_ip.get():
-        ips = interface_get_ips(input_ip.get(), (1, 10))
+        ips = interface_get_ips(input_ip.get())
     else:
         file_path = filedialog.askopenfilename()
         with open(file_path, 'r') as f:
-            ips = interface_get_ips(f.read(), (1, 10))
+            ips = interface_get_ips(f.read())
     if input_port.get():
         ports = interface_get_ports(input_port.get())
     else:

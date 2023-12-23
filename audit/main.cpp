@@ -14,12 +14,12 @@
 
 using namespace std;
 void logEvent(string event, int pid) {
-    // Функция для сохранения событий в журнале событий
     ofstream logFile;
     logFile.open("event_log.txt", ios_base::app);
     time_t now = time(0);
     tm *ltm = localtime(&now);
     logFile << put_time(ltm, "%c") << " : " << pid << " : " << event << endl;
+    cout << pid << " : " << event << endl;
     logFile.close();
 }
 
